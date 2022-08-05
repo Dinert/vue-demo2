@@ -33,37 +33,37 @@ export default {
           },
           {
             label: '序号',
-            type: 'index',
+            prop: 'index',
             width: 80,
             align: 'center'
           },
           {
             label: '表单名称',
-            type: 'formName'
+            prop: 'formName'
           },
           {
             label: '表单类型',
-            type: 'formBusinessTypeName'
+            prop: 'formBusinessTypeName'
           },
           {
             label: '报送小组',
-            type: 'formGroupName'
+            prop: 'formGroupName'
           },
           {
             label: '填表人',
-            type: 'createUser'
+            prop: 'createUser'
           },
           {
             label: '审批人',
-            type: 'approverName'
+            prop: 'approverName'
           },
           {
             label: '报送时间',
-            type: 'submitTime'
+            prop: 'submitTime'
           },
           {
             label: '填表时间',
-            type: 'createTime'
+            prop: 'createTime'
           }
         ]
       }
@@ -74,8 +74,10 @@ export default {
       return {
         url: '/zwjd-system/workflow/personal/list',
         params: {
-          pageNum: this.pageSize,
-          pageSize: this.currentPage
+          pageNum: this.pagination.currentPage,
+          pageSize: this.pagination.pageSize,
+          isCreateByMe: true,
+          defaultSort: {"prop":"submitTime","order":null}
         }
       }
     }

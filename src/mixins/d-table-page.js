@@ -83,7 +83,7 @@ export default {
         changeTableData(res) {
             res.data = res.data || res.content
             for (let i = 0; i < res.data.length; i++) {
-                res.data[i].index = i + 1 + (res.current - 1) * res.size
+                res.data[i].index = i + 1 + (res.number) * res.size
             }
             this.table.data = res.data
 
