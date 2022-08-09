@@ -7,7 +7,7 @@
       'size-change': sizeChange
     }">
       <template #search>
-      <el-button @click="search" type="primary">查询</el-button>
+      <el-button @click="search({name: '查询'})" type="primary">查询</el-button>
       </template>
     </d-table-page>
   </div>
@@ -17,7 +17,6 @@
 // import {DEchart} from '@dinert/echarts'
 // import {DTablePage} from '@dinert/element-ui'
 import DtablePage from '@/mixins/d-table-page'
-import {filterNullStrUndefind} from '@dinert/element-ui'
 // import dayjs from 'dayjs'
 export default {
   name: "App",
@@ -72,10 +71,10 @@ export default {
           }
         ]
       },
-      
+      // 953359269563961344
       // 查询栏的对象
       searchFormItem: {
-          name: {
+          formGroupName: {
               type: 'input',
               label: '名称'
           }
@@ -86,12 +85,6 @@ export default {
 
     // 获取表格的参数
     getTableParams() {
-      this.params = filterNullStrUndefind(this.searchForm.model)  // 过滤null、空字符串和undefined
-      const isSame = this.isEqual(this.params, this.oldParams) // 判断当前提交的参数和上一次提交的参数是否相同
-      if(!isSame) {
-        this.pagination.currentPage = 1
-      }
-      this.oldParams = {...this.params}
 
       return {
         url: '/zwjd-system/workflow/personal/list',

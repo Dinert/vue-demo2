@@ -1,6 +1,7 @@
-import {DTablePage} from '@dinert/element-ui'
+import {DTablePage, filterNullStrUndefind} from '@dinert/element-ui'
 import request from '@/service/request'
 import {isEqual} from 'lodash'
+
 export default {
     components: {
         DTablePage
@@ -61,14 +62,28 @@ export default {
         isEqual, // 判断两个对象的值是否相等
 
         // 请求表格数据
-        ajaxTableData() {
-            const params = this.getTableParams()
+        ajaxTableData(options) {
+            this.params = filterNullStrUndefind(this.searchForm.model)  // 过滤null、空字符串和undefined
+            const isSame = this.isEqual(this.params, this.oldParams) // 判断当前提交的参数和上一次提交的参数是否相同
+
+            // 在查询按钮点击时才走当前提交的参数和上一次提交的参数是否相同
+            if(options && options.name === '查询') {
+                if(!isSame) {
+                    this.pagination.currentPage = 1
+                  }
+                  this.oldParams = {...this.params}
+            }else {
+                this.params = {...this.oldParams}
+            }
+    
+
+            const params = this.getTableParams(options)
             return request(params)
         },
 
         // 获取表格数据
-        async getTableData() {
-            const res = await this.ajaxTableData()
+        async getTableData(options) {
+            const res = await this.ajaxTableData(options)
             this.changeTableData(res)
         },
 
@@ -80,9 +95,9 @@ export default {
             }
             this.table.data = res.data
 
-            this.pagination.total = res.total || res.totalElements
-            this.pagination.pageSize = res.pageSize || res.size
-            this.pagination.currentPage = res.pageNum || res.number + 1
+            this.pagination.total = res.total
+            this.pagination.pageSize = res.pageSize
+            this.pagination.currentPage = res.pageNum
         },
 
         // 重置表格请求的参数
