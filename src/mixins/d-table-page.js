@@ -1,13 +1,9 @@
 import {DTablePage} from '@dinert/element-ui'
 import request from '@/service/request'
-
+import {isEqual} from 'lodash'
 export default {
     components: {
         DTablePage
-    },
-    created() {
-        this.defaultParams = {...this.params}
-        this.oldParams = {...this.params}
     },
     data() {
         return {
@@ -40,7 +36,7 @@ export default {
             // 分页
             pagination: {
                 total: 0,
-                pageSize: 30,
+                pageSize: 10,
                 pageSizes: [10, 20, 30, 50, 100],
                 currentPage: 1
             },
@@ -58,14 +54,11 @@ export default {
 
             // 查询栏的对象
             searchFormItem: {
-                name: {
-                    type: 'input',
-                    label: '名称'
-                }
             }
         }
     },
     methods: {
+        isEqual, // 判断两个对象的值是否相等
 
         // 请求表格数据
         ajaxTableData() {
@@ -83,7 +76,7 @@ export default {
         changeTableData(res) {
             res.data = res.data || res.content
             for (let i = 0; i < res.data.length; i++) {
-                res.data[i].index = i + 1 + (res.number) * res.size
+                res.data[i].index = i + 1 + (res.pageNum) * res.pageSize
             }
             this.table.data = res.data
 
@@ -108,7 +101,6 @@ export default {
 
         // 查询
         search(options) {
-            this.oldParams = {...this.params}
             this.getTableData(options)
         },
 
@@ -118,13 +110,13 @@ export default {
             this.search()
         },
 
-        // currentChange
+        // 切换页数
         currentChange(value) {
             this.pagination.currentPage = value
             this.search()
         },
 
-        // sizeChange
+        // 切换每页条数
         sizeChange(value) {
             this.pagination.pageSize = value
             this.search()
