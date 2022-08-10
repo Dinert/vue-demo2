@@ -48,7 +48,7 @@ export default {
             // 是否禁用
             isDisabled: false,
 
-            // 查询的默认参数
+            // 查询的参数
             searchForm: {
                 model: {}
             },
