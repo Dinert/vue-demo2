@@ -7,7 +7,7 @@ const service = axios.create({
     timeout: 50 * 1000,
     headers: {
       common: {
-        Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyIiwibG9naW5OYW1lIjoiYWRtaW4iLCJkZXBhcnRtZW50Q29kZSI6IjAwMSIsInNjb3BlIjpbXSwibmFtZSI6Iui2hee6p-euoeeQhuWRmCIsInRlbmFudElkIjoic3lzdGVtIiwiaWQiOiIxIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYwMDU4NDQyLCJqdGkiOiJmNzhjNzk4Yy1kNjlmLTRjNTAtOWNlNy05YzZlZTQ2OWJjNzAiLCJjbGllbnRfaWQiOiJpc2xhbmQifQ.L2O9gC9XCqWNwHfAu22ELWbHCiFZPLSSgUSQOZpewSE'
+        Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyIiwibG9naW5OYW1lIjoiYWRtaW4iLCJkZXBhcnRtZW50Q29kZSI6IjAwMSIsInNjb3BlIjpbXSwibmFtZSI6Iui2hee6p-euoeeQhuWRmCIsInRlbmFudElkIjoic3lzdGVtIiwiaWQiOiIxIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYwMTM2MTc0LCJqdGkiOiI4ZmFiMzI1ZC01YTJhLTQ0OWYtYWRhZi0wODZmNmI1ODZjMTgiLCJjbGllbnRfaWQiOiJpc2xhbmQifQ.9hwxt_6UdYowQbbo_E7XYIePd6r97SBbqGjzSMbrsbA'
       }
     }
 })

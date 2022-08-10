@@ -72,7 +72,9 @@ export default {
                     this.pagination.currentPage = 1
                   }
                   this.oldParams = {...this.params}
-            }else {
+            }else if(options && options.name === '删除') { // 在删除操作请求的处理
+                this.pagination.currentPage = this.pagination.currentPage === 1 ? 1 : this.pagination.currentPage - 1
+            } else {
                 this.params = {...this.oldParams}
             }
     
