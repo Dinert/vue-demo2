@@ -9,7 +9,8 @@ module.exports = defineConfig({
   configureWebpack: {
     resolve: {
       alias: {
-          '@': resolve('src')
+          '@': resolve('src'),
+          '@packages': resolve('../element-ui/packages')
       }
   },
   },

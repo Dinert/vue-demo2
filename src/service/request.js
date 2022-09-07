@@ -1,3 +1,4 @@
+import router from '@/router'
 import axios from 'axios'
 import {Message, Loading, MessageBox} from 'element-ui'
 
@@ -7,7 +8,7 @@ const service = axios.create({
     timeout: 50 * 1000,
     headers: {
       common: {
-        Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyIiwibG9naW5OYW1lIjoiYWRtaW4iLCJkZXBhcnRtZW50Q29kZSI6IjAwMSIsInNjb3BlIjpbXSwibmFtZSI6Iui2hee6p-euoeeQhuWRmCIsInRlbmFudElkIjoic3lzdGVtIiwiaWQiOiIxIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYwMTM2MTc0LCJqdGkiOiI4ZmFiMzI1ZC01YTJhLTQ0OWYtYWRhZi0wODZmNmI1ODZjMTgiLCJjbGllbnRfaWQiOiJpc2xhbmQifQ.9hwxt_6UdYowQbbo_E7XYIePd6r97SBbqGjzSMbrsbA'
+        Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyIiwibG9naW5OYW1lIjoiYWRtaW4iLCJkZXBhcnRtZW50Q29kZSI6IjAwMSIsInNjb3BlIjpbXSwibmFtZSI6Iui2hee6p-euoeeQhuWRmCIsInRlbmFudElkIjoic3lzdGVtIiwiaWQiOiIxIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYyNTM0MTQ3LCJqdGkiOiIxZGFjMzU4Yy0yOTM2LTQ5OTktYmJmYy1iMGRlYTg0MzhiZjQiLCJjbGllbnRfaWQiOiJpc2xhbmQifQ.C6eoZIyc6Nviz_0pk2cOxQqAri4YAd6F2HaZ7R6mdag'
       }
     }
 })
@@ -87,8 +88,7 @@ service.interceptors.response.use(
                     type: 'error'
                 }).then(() => {
                     if (errorStats.includes(res.status)) {
-                        localStorage.clear()
-                        location.href = './management.html#/login'
+                        router.push({url: '/login'})
                     }
                 })
                 if (res.data === null) {
@@ -145,7 +145,8 @@ service.interceptors.response.use(
                         type: 'error'
                     }
                 ).then(() => {
-                    location.href = './management.html#/login'
+                    router.push({url: '/login'})
+
                 })
                 // eslint-disable-next-line consistent-return
                 return
@@ -158,7 +159,8 @@ service.interceptors.response.use(
             if (error.response.data && errorStats.includes(error.response.data.status)) {
                 localStorage.clear()
                 msg = error.response.data.msg
-                location.href = './management.html#/login'
+                router.push({url: '/login'})
+
             }
             messageBoxInstance = MessageBox.alert(msg, '警告', {
                 confirmButtonText: '关闭',

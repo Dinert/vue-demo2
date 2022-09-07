@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@dinert/echarts": "^0.0.8",
-    "@dinert/element-ui": "^1.0.4-29",
+    "@dinert/element-ui": "^1.0.4-35",
     "@dinert/time-player": "^1.0.0",
     "@dinert/utils": "^0.0.7",
     "axios": "^0.27.2",
