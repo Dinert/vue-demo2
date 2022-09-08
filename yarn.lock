@@ -1393,20 +1393,20 @@
     yargs "^17.5.1"
     yargs-parser "^20.2.9"
 
-"@dinert/element-ui@^1.0.4-29":
-  version "1.0.4-29"
-  resolved "https://registry.yarnpkg.com/@dinert/element-ui/-/element-ui-1.0.4-29.tgz#52e4f0625d78383d4f643372f971cb3cfa23862e"
-  integrity sha512-JudSkR9MZPqjI6ZbIHnJNlmdGPEv7kzhQUb1bNDWj7R7qhfoZ9XaHurHCoH0wAjYI4hvduo80+Etr/nNXK/ETg==
+"@dinert/element-ui@^1.0.4-35":
+  version "1.0.4-35"
+  resolved "http://192.168.1.106:4873/@dinert%2felement-ui/-/element-ui-1.0.4-35.tgz#657080d793a5405a68eec124c6e445407bb4fb4b"
+  integrity sha512-1Pxhfpmqv61QIncDGeK6XhHGDDpxku6gFtskHj5D77S0WTMdsIJyzny7FBCpDnr3rPFpgFAKtiPsDlSkWh+yJw==
 
 "@dinert/time-player@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@dinert/time-player/-/time-player-1.0.0.tgz#22781191e4eb368cbfa24bde4063bb02646ed58a"
   integrity sha512-TwFFWwI3Au4s+qi4S1KFOKJhQdP+U+6klUd/sePDEiErQOJ5NjdjbNGHWPJkTkrTjsp9HIZ+XzzzqXSTigROzQ==
 
-"@dinert/utils@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@dinert/utils/-/utils-0.0.7.tgz#35e0331a8c6d2604be1b1476988471aa004694e0"
-  integrity sha512-TXWFZORpB7jhHx6C6zLta9qCeOPUFe3jDtyQuxSWtZ1QEd0HeStcilfRF7QJB/dhDRPnSqxMr/sXIlN0k71ebw==
+"@dinert/utils@^0.0.92":
+  version "0.0.92"
+  resolved "http://192.168.1.106:4873/@dinert%2futils/-/utils-0.0.92.tgz#57e0b5fbe3c88d0a4966b08c03b6208d684ee296"
+  integrity sha512-wxY796nFycnhNiXb6EuuqhkQftwZZfUdSgHHOqa7J1/EXUfJowBf+saeKUbN1Y/eFRJrwCnhAbYotgEiqidahQ==
   dependencies:
     acorn "^8.7.1"
     ansi-styles "^3.2.1"
@@ -5263,7 +5263,7 @@ kind-of@^6.0.2, kind-of@^6.0.3:
   resolved "https://registry.npmmirror.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-klona@^2.0.5:
+klona@^2.0.4, klona@^2.0.5:
   version "2.0.5"
   resolved "https://registry.npmmirror.com/klona/-/klona-2.0.5.tgz#d166574d90076395d9963aa7a928fabb8d76afbc"
   integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
@@ -7171,6 +7171,14 @@ sass-graph@^4.0.0:
     scss-tokenizer "^0.3.0"
     yargs "^17.2.1"
 
+sass-loader@^13.0.2:
+  version "13.0.2"
+  resolved "http://192.168.1.106:4873/sass-loader/-/sass-loader-13.0.2.tgz#e81a909048e06520e9f2ff25113a801065adb3fe"
+  integrity sha512-BbiqbVmbfJaWVeOOAu2o7DhYWtcNmTfvroVgFXa6k2hHheMxNAeDHLNoDy/Q5aoaVlz0LH+MbMktKwm9vN/j8Q==
+  dependencies:
+    klona "^2.0.4"
+    neo-async "^2.6.2"
+
 sass@^1.52.1:
   version "1.52.1"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.52.1.tgz#554693da808543031f9423911d62c60a1acf7889"
@@ -8127,6 +8135,11 @@ vue-loader@^17.0.0:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
+
+vue-router@^3.5.2:
+  version "3.6.5"
+  resolved "http://192.168.1.106:4873/vue-router/-/vue-router-3.6.5.tgz#95847d52b9a7e3f1361cb605c8e6441f202afad8"
+  integrity sha512-VYXZQLtjuvKxxcshuRAwjHnciqZVoXAjTjcqBTz4rKc8qih9g9pI3hbDjmqXaHdgL3v8pV6P8Z335XvHzESxLQ==
 
 vue-runtime-helpers@^1.1.2:
   version "1.1.2"

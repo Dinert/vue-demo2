@@ -38,6 +38,7 @@
 <script>
 import DtablePage from "@/mixins/dTablePage";
 import request from "@/service/request";
+import {transform} from '@dinert/utils'
 export default {
   name: "MyTable",
   mixins: [DtablePage],
@@ -45,7 +46,9 @@ export default {
   created() {
     this.search();
   },
-  mounted() {},
+  mounted() {
+  transform.underline('a')
+  },
   data() {
     return {
       table: {
