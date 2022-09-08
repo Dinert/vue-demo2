@@ -19,6 +19,9 @@
         <el-button @click="search({ name: '查询' })" type="primary"
           >查询</el-button
         >
+        <el-button @click="resetSearch({ name: '重置' })"
+          >重置</el-button
+        >
       </template>
 
       <template #header-left>
@@ -44,7 +47,7 @@ export default {
   mixins: [DtablePage],
   components: {},
   created() {
-    this.search();
+    this.search({name: '查询'});
   },
   mounted() {
   transform.underline('a')

@@ -16,6 +16,7 @@ module.exports = defineConfig({
   },
 
   devServer: {
+    port: '3009',
     proxy: {
       '/export': {
         target: `http://192.168.2.238:9231`,
