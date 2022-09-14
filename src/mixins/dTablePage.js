@@ -1,13 +1,12 @@
 import { DTablePage, filterNullStrUndefind } from "@dinert/element-ui";
 import request from "@/service/request";
-import { isEqual } from "lodash";
+import { isEqual, isEmpty } from "lodash";
 
 export default {
   components: {
     DTablePage,
   },
   created() {
-
     this.resetParams()
     this.resetPagination()
   },
@@ -70,11 +69,12 @@ export default {
     ajaxTableData(options = {}) {
       this.params = filterNullStrUndefind(this.searchForm.model); // 过滤null、空字符串和undefined
       const isSame = this.isEqual(this.params, this.oldParams); // 判断当前提交的参数和上一次提交的参数是否相同
+      options.isSame = isSame
 
       // 在查询按钮点击时才走当前提交的参数和上一次提交的参数是否相同
       if (options.name === "查询") {
         if (!isSame) {
-          this.pagination.currentPage = 1;
+          this.pagination.currentPage = 1
         }
         this.oldParams = { ...this.params };
       } else if(options.name === '重置') {
@@ -82,7 +82,7 @@ export default {
       } else if (options.name === "删除") {
         if (this.table.data && this.table.data.length) {
           if (this.table.data.length === 1 && this.pagination.currentPage > 1) {
-            this.pagination.currentPage = this.pagination.currentPage - 1;
+            this.pagination.currentPage = this.pagination.currentPage - 1
           }
         }
       } else {
@@ -119,9 +119,17 @@ export default {
 
     // 重置表格请求的参数
     resetParams() {
-      for (const prop in this.defaultSearchForm.model) {
-        this.$set(this.searchForm.model, prop, this.defaultSearchForm.model[prop]);
+
+      if(isEmpty(this.defaultSearchForm.model)) { // 判断查询的默认参数是否为空，如果为空则重置查询参数为''
+        for (const prop in this.searchForm.model) {
+          this.searchForm.model[prop] = ''
+        }
+      }else {
+        for (const prop in this.defaultSearchForm.model) {
+          this.$set(this.searchForm.model, prop, this.defaultSearchForm.model[prop]);
+        }
       }
+ 
     },
 
     // 清空参数

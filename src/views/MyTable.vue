@@ -96,14 +96,14 @@ export default {
           },
         ],
       },
-      // 953359269563961344
+
       // 查询栏的对象
       searchFormItem: {
         industryName: {
           type: "input",
           label: "行业名称",
         },
-      },
+      }
     };
   },
   computed: {},
