@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@dinert/echarts": "^0.0.8",
-    "@dinert/element-ui": "^1.0.4-37",
     "@dinert/time-player": "^1.0.0",
     "@dinert/utils": "^0.0.92",
     "axios": "^0.27.2",
@@ -22,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@dinert/element-ui": "^1.0.4-48",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
@@ -30,7 +30,8 @@
     "postcss": "^8.4.14",
     "sass-loader": "^13.0.2",
     "vue-router": "^3.5.2",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vuedraggable": "^2.24.3"
   },
   "eslintConfig": {
     "root": true,

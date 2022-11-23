@@ -1393,10 +1393,10 @@
     yargs "^17.5.1"
     yargs-parser "^20.2.9"
 
-"@dinert/element-ui@^1.0.4-37":
-  version "1.0.4-37"
-  resolved "http://192.168.1.106:4873/@dinert%2felement-ui/-/element-ui-1.0.4-37.tgz#cccab0ce3cbe9dc4310baaea0165dc502270c841"
-  integrity sha512-PTTQCUNTXYbRDujtHk4YCTmFYf2GiiKjWIl74BU/+yMO/TbM/SAWVT8MaRXX7ZNrqNZLrUan2Eo6QN+fEihJ7g==
+"@dinert/element-ui@^1.0.4-48":
+  version "1.0.4-48"
+  resolved "http://192.168.1.106:4873/@dinert%2felement-ui/-/element-ui-1.0.4-48.tgz#da0f928ea2bdb88c0fcad71aef851740321b7f20"
+  integrity sha512-F5rD5sRNcZn/BzVNWrHHUn9lnGhttJe2QxLfHTwTfPdnPw78UlzIt/uhBUtWOod9QVi/rzvbit/szIo8cE6Qpw==
 
 "@dinert/time-player@^1.0.0":
   version "1.0.0"

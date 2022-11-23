@@ -1,10 +1,12 @@
 import { DTablePage, filterNullStrUndefind } from "@dinert/element-ui";
 import request from "@/service/request";
 import { isEqual, isEmpty } from "lodash";
+import draggable from "vuedraggable";
 
 export default {
   components: {
     DTablePage,
+    draggable
   },
   created() {
     this.resetParams()
@@ -104,18 +106,16 @@ export default {
         return res
     },
 
-    // 改变表格的数据
+        // 改变表格的数据
     changeTableData(res) {
-      res.data = res.data || res.content;
-      for (let i = 0; i < res.data.length; i++) {
-        res.data[i].index = i + 1 + res.pageNum * res.pageSize;
-      }
-      this.table.data = res.data;
+          res.data = res.data || res.content
+          for (let i = 0; i < res.data.length; i++) {
+              res.data[i].index = i + 1 + res.pageNum * res.pageSize
+          }
+          this.table.data = res.data
 
-      this.pagination.total = res.total;
-      this.pagination.pageSize = res.pageSize;
-      this.pagination.currentPage = res.pageNum;
-    },
+          this.pagination.total = res.total
+      },
 
     // 重置表格请求的参数
     resetParams() {
@@ -157,16 +157,21 @@ export default {
       this.search(options);
     },
 
-    // 切换页数
-    currentChange(value) {
-      this.pagination.currentPage = value;
-      this.search();
-    },
+        // 切换页数
+        currentChange(value) {
+          this.pagination.currentPage = value
+          this.search({name: '查询'})
+      },
 
-    // 切换每页条数
-    sizeChange(value) {
-      this.pagination.pageSize = value;
-      this.search();
-    },
+        // 切换每页条数
+        sizeChange(value) {
+          const pageSize = this.pagination.pageSize
+          this.pagination.pageSize = value
+          if (pageSize > value
+              || this.pagination.currentPage <= Math.ceil(this.pagination.total / this.pagination.pageSize)) {
+              this.search({name: '查询'})
+          }
+
+      },
   },
 };
